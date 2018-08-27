@@ -108,9 +108,9 @@
 			$activities = $runtastic->getActivities();
 		echo "HALLO".$activities;	
 			// neue Daten abrufen, nur eintragen, wenn neue ID
-			if (GetValue($this->GetIDForIdent("id")) <> $activities[0]->id)
-			{
-				SetValue($this->GetIDForIdent("ndr"), true);
+		//	if (GetValue($this->GetIDForIdent("id")) <> $activities[0]->id)
+		//	{
+		//		SetValue($this->GetIDForIdent("ndr"), true);
 			
 			// ID & so
 			SetValue($this->GetIDForIdent("id"), $activities[0]->id);
@@ -145,7 +145,7 @@
 			SetValue($this->GetIDForIdent("minutes"), $activities[0]->date->minutes);
 			SetValue($this->GetIDForIdent("seconds"), $activities[0]->date->seconds);
 			
-			}
+		//	}
 
 		}
 
@@ -412,8 +412,8 @@
 			];
 
 			$responseOutputJson = $this->post(self::RUNTASTIC_LOGIN_URL, $postData);
-echo "HALLO".$responseOutputJson;
-			if ($this->getResponseStatusCode() == self::HTTP_OK) {
+var_dump($responseOutputJson);			
+if ($this->getResponseStatusCode() == self::HTTP_OK) {
 				$this->setDataFromResponse($responseOutputJson->update);
 
 				$frontpageOutput = $this->get(sprintf(self::RUNTASTIC_SPORT_SESSIONS_URL, $this->getUsername()), [], false);
@@ -509,7 +509,7 @@ echo "HALLO".$responseOutputJson;
 				];
 
 				$response = $this->post(self::RUNTASTIC_SESSIONS_URL, $postData);
-				echo "HALLO".$response;
+var_sump($response);
 			}
 
 			//return new RuntasticActivityList($response);
