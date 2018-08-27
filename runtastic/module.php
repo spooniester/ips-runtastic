@@ -37,7 +37,7 @@
 			
 			
 			// Integer
-			$this->RegisterVariableInteger("id", "Aktivitaets-ID");
+			$this->RegisterVariableFloat("id", "Aktivitaets-ID");
 			$this->RegisterVariableInteger("type_id", "Aktivitaets-Typ-ID");
 			$this->RegisterVariableInteger("kcal", "kcal", "RUNT.kcal");
 			$this->RegisterVariableInteger("heartrate_avg", "Durchschnittspuls", "RUNT.bpm");
