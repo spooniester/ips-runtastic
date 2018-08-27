@@ -106,7 +106,7 @@
 			$runtastic->login();
 			
 			$activities = $runtastic->getActivities();
-		echo $ativities;	
+		echo "HALLO".$activities;	
 			// neue Daten abrufen, nur eintragen, wenn neue ID
 			if (GetValue($this->GetIDForIdent("id")) <> $activities[0]->id)
 			{
@@ -412,7 +412,7 @@
 			];
 
 			$responseOutputJson = $this->post(self::RUNTASTIC_LOGIN_URL, $postData);
-echo $responseOutputJson;
+echo "HALLO".$responseOutputJson;
 			if ($this->getResponseStatusCode() == self::HTTP_OK) {
 				$this->setDataFromResponse($responseOutputJson->update);
 
@@ -509,7 +509,7 @@ echo $responseOutputJson;
 				];
 
 				$response = $this->post(self::RUNTASTIC_SESSIONS_URL, $postData);
-				echo $response;
+				echo "HALLO".$response;
 			}
 
 			//return new RuntasticActivityList($response);
@@ -584,7 +584,7 @@ echo $responseOutputJson;
 
 			curl_setopt_array($curl, $curlOptions);
 			$response = curl_exec($curl);
-			echo $curl;
+			echo "HALLO".$curl;
 			$this->lastRequestInfo = curl_getinfo($curl);
 			curl_close($curl);
 
